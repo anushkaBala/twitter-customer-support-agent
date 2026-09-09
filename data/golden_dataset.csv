@@ -1,0 +1,136 @@
+message,brand,true_intent,true_escalation,annotator_1,annotator_2,tie_breaker,notes
+"Where's my order?",amazon,order_status,false,order_status,order_status,order_status,Clear intent - customer asking for tracking
+"My package hasn't arrived after 2 weeks",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Time-sensitive; needs urgent response
+"I want a refund for this purchase",amazon,refund_request,true,refund_request,refund_request,refund_request,Financial request; requires human approval
+"Your customer service is terrible",amazon,complaint,true,complaint,complaint,complaint,Anger indicator; escalate for empathy
+"Can you help me track my package?",amazon,order_status,false,order_status,order_status,order_status,Straightforward tracking request
+"This product is broken",amazon,product_quality,true,product_quality,product_quality,product_quality,Defect claim; may need replacement
+"I was charged twice for my order",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Financial discrepancy; requires verification
+"How do I return this item?",amazon,return_request,false,return_request,return_request,return_request,Standard return process question
+"My delivery is 5 days overdue",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Significant delay; escalate
+"Great job taking 3 weeks to ship",amazon,shipping_delay,true,shipping_delay,complaint,shipping_delay,Sarcasm detected - actually a complaint about delay
+"Can I get a discount code?",amazon,discount_inquiry,false,discount_inquiry,discount_inquiry,discount_inquiry,Simple inquiry
+"When will you restock this item?",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Inventory question
+"I can't log into my account",amazon,login_issue,true,login_issue,login_issue,login_issue,Account access problem
+"Is this item still available?",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Standard availability check
+"My refund still hasn't arrived",amazon,refund_request,true,refund_request,refund_request,refund_request,Follow-up on refund status; escalate
+"The quality of this product is poor",amazon,product_quality,true,product_quality,product_quality,product_quality,Quality complaint
+"How long does shipping take?",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Policy question
+"I didn't receive my order and it says delivered",amazon,lost_package,true,lost_package,lost_package,lost_package,Critical issue; package disappeared
+"Can you help with my payment error?",amazon,payment_failed,true,payment_failed,payment_failed,payment_failed,Technical payment issue
+"My account is locked - help!",amazon,account_problem,true,account_problem,account_problem,account_problem,Urgent access issue
+"Is my warranty still valid?",amazon,warranty_claim,false,warranty_claim,warranty_claim,warranty_claim,Warranty question
+"Thanks for nothing",amazon,complaint,true,complaint,complaint,complaint,Sarcastic complaint; escalate
+"When can I expect my delivery?",amazon,order_status,false,order_status,order_status,order_status,Delivery timeline inquiry
+"I want to exchange this for a different size",amazon,return_request,false,return_request,return_request,return_request,Exchange request - standard process
+"Why is my billing amount wrong?",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Billing discrepancy
+"Your support team never responds",amazon,complaint,true,complaint,complaint,complaint,Service complaint; escalate
+"How do I track my return shipment?",amazon,return_request,false,return_request,return_request,return_request,Return tracking question
+"This arrived damaged - I need a replacement",amazon,product_quality,true,product_quality,product_quality,product_quality,Damage claim; may need expedited replacement
+"Can I cancel my order?",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Order cancellation inquiry
+"My credit card was declined - what do I do?",amazon,payment_failed,true,payment_failed,payment_failed,payment_failed,Payment processing issue
+"I'm very disappointed with this purchase",amazon,complaint,true,complaint,complaint,complaint,Dissatisfaction; escalate
+"Where is my tracking number?",amazon,order_status,false,order_status,order_status,order_status,Tracking info request
+"How long does refund processing take?",amazon,refund_request,true,refund_request,refund_request,refund_request,Refund timeline; still sensitive
+"This product doesn't work at all",amazon,product_quality,true,product_quality,product_quality,product_quality,Non-functional product
+"I was overcharged by $50",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Significant overcharge; escalate
+"Your website is broken - I can't checkout",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,Website malfunction; escalate
+"Do you have customer service hours?",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Contact info question
+"I want my money back immediately",amazon,refund_request,true,refund_request,refund_request,refund_request,Urgent refund demand; escalate
+"The app keeps crashing when I try to order",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,App malfunction; escalate
+"Why haven't I received my package yet?",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Delivery concern; escalate if overdue
+"I lost my password - help me reset it",amazon,login_issue,true,login_issue,login_issue,login_issue,Password reset request
+"This is unacceptable service",amazon,complaint,true,complaint,complaint,complaint,Strong complaint; escalate
+"Can I get a refund and keep the item?",amazon,refund_request,true,refund_request,refund_request,refund_request,Unusual request; escalate
+"My order is showing 'out for delivery' but it's 9pm",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Time-sensitive delivery issue
+"Do you offer free shipping?",amazon,discount_inquiry,false,discount_inquiry,discount_inquiry,discount_inquiry,Shipping cost inquiry
+"I need to update my delivery address",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Logistics question
+"This is the third time this has failed",amazon,complaint,true,complaint,complaint,complaint,Repeat issue; escalate
+"I paid extra for expedited shipping - where is it?",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Premium service not delivered; escalate
+"Can you send me a replacement right away?",amazon,product_quality,true,product_quality,product_quality,product_quality,Urgent replacement; escalate
+"My account was hacked - I need help",amazon,account_problem,true,account_problem,account_problem,account_problem,Security issue; critical escalation
+"How do I check my refund status?",amazon,refund_request,false,refund_request,refund_request,refund_request,Refund tracking question
+"I was promised delivery on this date but nothing",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Broken promise; escalate
+"The item I received is not what I ordered",amazon,product_quality,true,product_quality,product_quality,product_quality,Wrong item; needs investigation
+"Can I use two promo codes together?",amazon,discount_inquiry,false,discount_inquiry,discount_inquiry,discount_inquiry,Coupon policy question
+"My subscription hasn't been charged but I got no notice",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Subscription issue; escalate
+"I'm still waiting for my refund after 2 months",amazon,refund_request,true,refund_request,refund_request,refund_request,Delayed refund; escalate
+"The package shows delivered but I wasn't home",amazon,lost_package,true,lost_package,lost_package,lost_package,Potential package theft; escalate
+"I need to return multiple items",amazon,return_request,false,return_request,return_request,return_request,Bulk return request
+"Your prices are way too high",amazon,complaint,true,complaint,general_inquiry,complaint,Price complaint - price sensitivity shows frustration
+"Can I get my money back if I already used the item?",amazon,refund_request,true,refund_request,refund_request,refund_request,Unusual refund terms; escalate
+"The product came with missing parts",amazon,product_quality,true,product_quality,product_quality,product_quality,Incomplete shipment; needs replacement
+"I haven't received my order confirmation email",amazon,order_status,true,order_status,technical_issue,order_status,Order confirmation issue - boundary case
+"This is the worst purchase I've ever made",amazon,complaint,true,complaint,complaint,complaint,Strong dissatisfaction; escalate
+"Can you manually process my order?",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,System workaround request; escalate
+"My address was wrong but I want my order anyway",amazon,order_status,true,order_status,order_status,order_status,Delivery complication; escalate
+"I'm being double-charged every month",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Recurring overcharge; critical escalation
+"How do I contact Amazon directly?",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Contact method inquiry
+"The tracking number doesn't work",amazon,order_status,true,order_status,order_status,order_status,Tracking system issue; may need escalation
+"I want to speak to a supervisor",amazon,complaint,true,complaint,complaint,complaint,Escalation request; honors customer intent
+"My return was rejected - why?",amazon,return_request,true,return_request,return_request,return_request,Return denial; may need review
+"I paid for an item I never ordered",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Unauthorized charge; escalate
+"The package arrived late and damaged",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Multiple issues; escalate
+"Can you extend my return window?",amazon,return_request,true,return_request,return_request,return_request,Policy exception request; escalate
+"I'm a loyal customer and this is unacceptable",amazon,complaint,true,complaint,complaint,complaint,VIP complaint; escalate with priority
+"My order shows cancelled but I want it",amazon,order_status,true,order_status,order_status,order_status,Order status confusion; escalate
+"I need this by tomorrow - can you help?",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Urgent delivery need; escalate
+"The promotional price didn't apply at checkout",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Discount not honored; escalate
+"I want to return items but have questions",amazon,return_request,false,return_request,return_request,return_request,Return process inquiry
+"This product is terrible quality for the price",amazon,product_quality,true,complaint,product_quality,product_quality,Boundary between quality and complaint
+"My payment went through but order didn't process",amazon,payment_failed,true,payment_failed,payment_failed,payment_failed,Transaction mismatch; escalate
+"How long will this be backordered?",amazon,order_status,false,order_status,general_inquiry,order_status,Backorder timeline inquiry
+"I need proof of my purchase for warranty",amazon,warranty_claim,false,warranty_claim,warranty_claim,warranty_claim,Warranty documentation request
+"The item in my cart disappeared",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,Website glitch; escalate
+"I want to report a safety issue with this product",amazon,product_quality,true,complaint,product_quality,product_quality,Safety concern; escalate
+"My login credentials aren't working",amazon,login_issue,true,login_issue,login_issue,login_issue,Authentication failure
+"I ordered this 4 weeks ago with no update",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Major delay; escalate
+"Can you match a competitor's price?",amazon,discount_inquiry,true,discount_inquiry,discount_inquiry,discount_inquiry,Price match request - may need approval
+"I received someone else's order",amazon,lost_package,true,lost_package,lost_package,lost_package,Wrong package; critical escalation
+"My account has suspicious activity",amazon,account_problem,true,account_problem,account_problem,account_problem,Security concern; escalate
+"This item is defective and I want a refund",amazon,product_quality,true,refund_request,product_quality,product_quality,Boundary: quality vs refund
+"How do I know if my refund was approved?",amazon,refund_request,false,refund_request,refund_request,refund_request,Refund status inquiry
+"Your customer service is amazing",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Positive feedback
+"I'm missing parts from my order",amazon,product_quality,true,product_quality,product_quality,product_quality,Incomplete delivery
+"Why do you keep charging me after I cancelled?",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Unauthorized recurring charge; escalate
+"The discount code I was given doesn't work",amazon,discount_inquiry,false,discount_inquiry,discount_inquiry,discount_inquiry,Coupon redemption issue
+"I need to change my delivery preferences",amazon,order_status,false,order_status,general_inquiry,order_status,Delivery customization request
+"This is affecting my business - urgent help needed",amazon,complaint,true,complaint,complaint,complaint,Business impact; high priority escalation
+"My replacement item also arrived defective",amazon,product_quality,true,complaint,product_quality,product_quality,Repeat defect; escalate for investigation
+"I paid more than the current sale price",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Price adjustment request; escalate
+"Can you activate my replacement warranty?",amazon,warranty_claim,false,warranty_claim,warranty_claim,warranty_claim,Warranty enrollment request
+"The app won't let me view my orders",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,App functionality issue; escalate
+"I need my package signature waived due to COVID",amazon,order_status,false,order_status,general_inquiry,order_status,Special delivery request
+"Why is there a hold on my refund?",amazon,refund_request,true,refund_request,refund_request,refund_request,Refund delay; escalate
+"I found the item cheaper elsewhere",amazon,complaint,false,discount_inquiry,general_inquiry,discount_inquiry,Not an urgent complaint - just price comparison
+"My shipping fee wasn't applied correctly",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Shipping charge error; escalate
+"Can I get an expedited replacement?",amazon,product_quality,true,product_quality,product_quality,product_quality,Urgent replacement request
+"The website won't let me complete my return",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,Return system issue; escalate
+"I need a tax invoice for my purchase",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Documentation request
+"My loyalty points weren't credited",amazon,account_problem,true,account_problem,account_problem,account_problem,Account error; escalate
+"This item was supposed to be free with my order",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Promotional item missing; escalate
+"I want to cancel my Prime membership",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Subscription cancellation request
+"The courier damaged my package",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Carrier liability; escalate
+"I was told someone would call me - nobody did",amazon,complaint,true,complaint,complaint,complaint,Broken promise; escalate
+"Can I extend the return window for this item?",amazon,return_request,true,return_request,return_request,return_request,Policy exception; escalate
+"My payment details were compromised",amazon,account_problem,true,account_problem,account_problem,account_problem,Payment security; escalate
+"Why can't I apply my gift card?",amazon,payment_failed,true,payment_failed,payment_failed,payment_failed,Gift card redemption error; escalate
+"The item quality dropped since I last bought it",amazon,product_quality,true,product_quality,product_quality,product_quality,Quality regression complaint
+"I need to update my payment method urgently",amazon,account_problem,false,account_problem,account_problem,account_problem,Account update request
+"This brand sent me the wrong product",amazon,product_quality,true,product_quality,product_quality,product_quality,Wrong SKU shipped
+"My refund was only partial - why?",amazon,refund_request,true,refund_request,refund_request,refund_request,Incomplete refund; escalate
+"Can you help me file an insurance claim?",amazon,lost_package,true,lost_package,lost_package,lost_package,Package loss; escalate
+"The app logged me out and I lost my cart",amazon,technical_issue,true,technical_issue,technical_issue,technical_issue,Session loss issue; escalate
+"I need to verify my identity for this refund",amazon,refund_request,true,refund_request,refund_request,refund_request,Verification requirement; escalate
+"My order is stuck in processing for days",amazon,order_status,true,order_status,order_status,order_status,Processing delay; escalate if very long
+"This product doesn't match the description",amazon,product_quality,true,product_quality,product_quality,product_quality,Misrepresentation; escalate
+"I want to file a complaint against this seller",amazon,complaint,true,complaint,complaint,complaint,Third-party seller issue; escalate
+"My address shows as 'undeliverable' but it's valid",amazon,order_status,true,order_status,order_status,order_status,Delivery address issue; escalate
+"Can I get priority shipping retroactively?",amazon,shipping_delay,true,shipping_delay,shipping_delay,shipping_delay,Expedite request after delay
+"The warranty doesn't cover what I need",amazon,warranty_claim,true,warranty_claim,warranty_claim,warranty_claim,Warranty coverage dispute; escalate
+"I'm being charged duplicate amounts monthly",amazon,billing_issue,true,billing_issue,billing_issue,billing_issue,Recurring duplicate charge; critical
+"This is a counterfeit product",amazon,product_quality,true,complaint,product_quality,product_quality,Authenticity concern; escalate
+"My return label isn't working",amazon,return_request,true,return_request,return_request,return_request,Return logistics issue; escalate
+"I need to speak to someone in my language",amazon,general_inquiry,false,general_inquiry,general_inquiry,general_inquiry,Language preference request
+"The item never showed up but it says delivered",amazon,lost_package,true,lost_package,lost_package,lost_package,Package theft/loss; escalate
+"Can you process my refund without the original packaging?",amazon,refund_request,true,refund_request,return_request,refund_request,Return policy exception; escalate
