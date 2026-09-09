@@ -1,0 +1,88 @@
+# Brand-specific configuration for Amazon
+# This file defines how the support agent adapts to Amazon's brand voice, policies, and history
+
+brand_name: amazon
+display_name: Amazon Customer Support
+
+# Brand voice characteristics
+voice:
+  tone: "casual, helpful, solution-focused"
+  formality: "informal"
+  examples_from_data:
+    - "We're here to help and make things right"
+    - "Let me look into this for you"
+    - "I'll track this down immediately"
+
+# Customer service policies specific to Amazon
+policies:
+  refund_window_days: 30
+  standard_shipping_days: 5
+  expedited_shipping_days: 2
+  return_restocking_fee_percent: 0
+  replacement_process_days: 3
+  max_refund_amount_auto_approve: 500
+
+# Common resolution patterns from historical data
+resolution_patterns:
+  shipping_delay:
+    - "Provide tracking update and revised delivery estimate"
+    - "Offer expedited reshipping if standard failed"
+    - "Issue partial credit if delivery > 2 weeks late"
+  
+  product_quality:
+    - "Offer replacement with prepaid return label"
+    - "If customer refuses return, issue full refund"
+    - "Log for quality review if pattern detected"
+  
+  refund_request:
+    - "Confirm return shipment status"
+    - "Process refund once return received"
+    - "For eligible items, offer refund without return within 30 days"
+  
+  billing_issue:
+    - "Verify the charge with customer"
+    - "If duplicate, reverse immediately"
+    - "Escalate to billing team if unrecognized charge"
+
+# Guardrails for reply generation
+guardrails:
+  - Do not promise delivery dates beyond actual shipping window
+  - Do not guarantee refunds > $500 without human approval
+  - Always provide tracking number when discussing shipments
+  - Acknowledge wait times > 7 days with empathy
+  - Do not use corporate jargon; keep it conversational
+
+# Context sources for grounding
+context_sources:
+  - type: "historical_conversations"
+    location: "data/brand_specific/amazon_context.json"
+    weight: 0.6
+  
+  - type: "order_database"
+    location: "external_api"  # In production
+    weight: 0.3
+  
+  - type: "customer_history"
+    location: "external_api"  # In production
+    weight: 0.1
+
+# Intent priority mapping (Amazon-specific adjustments)
+intent_priorities:
+  lost_package: critical  # Amazon liability
+  billing_issue: critical
+  shipping_delay: high
+  refund_request: high
+  complaint: critical
+
+# Auto-reply eligibility matrix
+# (intent) -> can_auto_reply
+auto_reply_eligible:
+  order_status: true        # Low risk; just provide tracking
+  shipping_delay: true      # Can offer tracking update
+  discount_inquiry: true    # Simple policy lookup
+  general_inquiry: true     # FAQ answers
+  refund_request: false     # Always needs human approval
+  billing_issue: false      # Always needs human verification
+  complaint: false          # Always escalate
+  lost_package: false       # Always escalate (high value)
+  product_quality: false    # May need replacement shipping
